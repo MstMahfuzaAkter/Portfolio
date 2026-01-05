@@ -3,57 +3,64 @@ import AboutImage from "../assets/images/Profile.jfif";
 
 const About = () => {
   return (
-    <section id="about" className="py-16 bg-[#FAFAFA]">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-primary mb-6 text-center">
-          About Me
-        </h1>
-        <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-8 md:gap-0">
-          {/* Left Column - Image */}
-          <div className="md:w-1/3 mb-8 md:mb-0 flex justify-center">
-            <div className="rounded-full overflow-hidden shadow-xl">
-              <img
-                src={AboutImage}
-                alt="Akib Bhuiyan - MERN Stack Developer"
-                className="w-48 rounded-full h-48 object-cover border-4 border-primary"
-              />
+    <section id="about" className="py-2 bg-white font-raleway">
+      <div className="container mx-auto px-6 lg:px-12">
+        {/* Section Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-secondary font-bold tracking-widest uppercase text-sm mb-2">
+            Get to know
+          </h2>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-primary">
+            About Me
+          </h1>
+          <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+          {/* Left Column - Image with Decorative Frame */}
+          <div className="md:w-2/5 flex justify-center">
+            <div className="relative group">
+              {/* Decorative background box */}
+            
+              <div className="rounded-full overflow-hidden shadow-2xl  p-1">
+                <img
+                  src={AboutImage}
+                  alt="Mst. Mahfuza Akter - MERN Stack Developer"
+                  className="w-64 h-80 md:w-80 md:h-[450px] object-cover rounded-full transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
             </div>
           </div>
 
           {/* Right Column - Content */}
-          <div className="md:w-2/3 md:px-8">
-            <div className="text-[#333333]">
-              <p className="mb-4 text-justify">
-                Hi, I'm <strong>Mst.Mahfuza Akter</strong>, a passionate{" "}
-                <strong>MERN Stack Developer</strong> with expertise in{" "}
-                <strong>React</strong>, <strong>Node.js</strong>,{" "}
-                <strong>MongoDB</strong>, and <strong>Express.js</strong>. From
-                creating my first Flutter music app to developing full-stack web
-                applications, I've always been excited about leveraging
-                technology to create impactful solutions.
+          <div className="md:w-3/5">
+            <div className="text-gray-700 leading-relaxed space-y-6">
+              <p className="text-xl font-medium text-primary">
+                Hi, I'm <span className="text-secondary font-bold">Mst. Mahfuza Akter</span>, 
+                a MERN Stack Developer driven by the challenge of solving complex problems.
               </p>
-              <p className="mb-4 text-justify">
-                My journey in software development began with HTML and CSS, but
-                it was when I learned JavaScript and the power of{" "}
-                <strong>React</strong> that my passion for web development truly
-                ignited. I specialize in building scalable and performant web
-                applications with a strong focus on user experience and clean,
-                maintainable code.
+              
+              <p className="text-justify">
+                My journey began with the basics of the web, but my passion truly ignited 
+                when I discovered the power of <strong>React</strong> and the <strong>MERN Stack</strong>. 
+                I specialize in building scalable, performant applications that don't just work—they 
+                provide an exceptional user experience through clean and maintainable code.
               </p>
-              <p className="mb-4 text-justify">
-                Currently, I am working as a part of a collaborative team on
-                various projects, including an{" "}
-                <strong>e-commerce platform</strong> built using the MERN stack.
-                I enjoy contributing to open-source projects and always seek
-                opportunities to learn and grow as a developer.
+
+              <p className="text-justify">
+                Currently, I am focused on collaborative development, contributing to projects 
+                like <strong>E-commerce platforms</strong> and <strong>MERN-based systems</strong>. 
+                I am a lifelong learner who stays updated with UI/UX research and SEO trends 
+                to ensure my applications are as visible as they are functional.
               </p>
-              <p className="text-justify ">
-                When I'm not developing web applications, you’ll find me
-                fine-tuning my motorcycle, exploring off-road trails, or
-                organizing spaces to create a productive environment. I also
-                enjoy occasional chess games with good company and dabble in SEO
-                and UI/UX research to stay informed on modern digital trends.
-              </p>
+
+              {/* Personal Interests / Fun Facts */}
+              <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-secondary italic text-gray-600">
+                "When I'm not coding, you’ll find me exploring off-road trails on my motorcycle, 
+                mastering a chess match, or organizing my workspace for maximum productivity."
+              </div>
+
+             
             </div>
           </div>
         </div>

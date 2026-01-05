@@ -5,7 +5,7 @@
     "description": "GreenNest is an eco-friendly plant marketplace where users can explore, buy, and manage plants with a smooth and user-friendly shopping experience.",
     "site": "https://plantgreen-e7dd0.web.app/",
     "github": "https://github.com/MstMahfuzaAkter/GreenNest",
-    "image": "/images/p3.png",
+    "image": "https://i.postimg.cc/sxdGqH9k/p3.png",
     "alt": "GreenNest eco-friendly plant marketplace"
   },
   {
@@ -14,7 +14,7 @@
     "description": "Habit Tracker is a productivity-focused application that helps users build, track, and maintain daily habits consistently.",
     "site": "https://habit-tracker-b0971.web.app/",
     "github": "https://github.com/MstMahfuzaAkter/habit-tracker",
-    "image": "/images/p2.png",
+    "image": "https://i.postimg.cc/P5kKYKgy/p1.png",
     "alt": "Habit Tracker productivity application"
   },
   {
@@ -23,7 +23,7 @@
     "description": "ClubSphere is a full-stack platform that allows users to discover clubs, manage events, memberships, and community activities efficiently.",
     "site": "https://clubsphere-a54db.web.app/",
     "github": "https://github.com/MstMahfuzaAkter/ClubSphere_Client",
-    "image": "/images/p1.png",
+    "image": "https://i.postimg.cc/JhzN5FPv/p2.png",
     "alt": "ClubSphere club and event management system"
   }
 ]

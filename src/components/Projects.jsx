@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from "react";
-import getImgUrl from "../utils/getImgUrl";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const Projects = () => {
   const [projectsData, setProjectsData] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
-  // const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   useEffect(() => {
-    // Fetch the projects data from the JSON file
     fetch("/projects.json")
       .then((response) => response.json())
       .then((data) => {
         setProjectsData(data);
         setFilteredProjects(data);
       })
-      .catch((error) => console.error("Error fetching projects data:", error));
+      .catch((err) => console.error("Error fetching projects:", err));
   }, []);
 
-  // Filter projects based on selected category
   const filterProjects = (category) => {
     setSelectedCategory(category);
     if (category === "all") {
@@ -29,97 +27,80 @@ const Projects = () => {
     }
   };
 
+  const categories = ["all", "frontend", "fullStack", "backend", "uiUX"];
+
   return (
-    <section id="projects" className="py-16 bg-lightgray">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-10 text-primary">
-          My Projects
-        </h2>
+    <section id="projects" className="py-2 bg-white font-raleway">
+      <div className="container mx-auto px-6">
+        {/* Section Heading */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-primary">
+            Recent Projects
+          </h1>
+          <div className="h-1 w-20 bg-secondary mx-auto mt-1 rounded-full"></div>
+        </div>
 
-        {/* Category Filter Buttons */}
-        {/* <div className="text-center mb-6">
-          <button
-            className={`px-6 py-2 mx-2 rounded ${
-              selectedCategory === "all"
-                ? "bg-primary text-white"
-                : "bg-white text-primary"
-            }`}
-            onClick={() => filterProjects("all")}>
-            All Projects
-          </button>
-          <button
-            className={`px-6 py-2 mx-2 rounded ${
-              selectedCategory === "frontend"
-                ? "bg-primary text-white"
-                : "bg-white text-primary"
-            }`}
-            onClick={() => filterProjects("frontend")}>
-            Frontend
-          </button>
-          <button
-            className={`px-6 py-2 mx-2 rounded ${
-              selectedCategory === "fullStack"
-                ? "bg-primary text-white"
-                : "bg-white text-primary"
-            }`}
-            onClick={() => filterProjects("fullStack")}>
-            Full Stack
-          </button>
-          <button
-            className={`px-6 py-2 mx-2 rounded ${
-              selectedCategory === "backend"
-                ? "bg-primary text-white"
-                : "bg-white text-primary"
-            }`}
-            onClick={() => filterProjects("backend")}>
-            Backend
-          </button>
-          <button
-            className={`px-6 py-2 mx-2 rounded ${
-              selectedCategory === "uiUX"
-                ? "bg-primary text-white"
-                : "bg-white text-primary"
-            }`}
-            onClick={() => filterProjects("uiUX")}>
-            UI/UX
-          </button>
-        </div> */}
-
-        {/* Projects */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {filteredProjects.map((project, index) => (
             <div
-              key={project.name}
-              className="project-card bg-white shadow-lg rounded-lg overflow-hidden">
-              <img
-                src={getImgUrl(project.image)}
-                alt={project.alt}
-                className="w-full h-48 object-cover"
-                loading="lazy"
-              />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold">{project.name}</h3>
-                <p className="text-sm text-secondary mb-4">
-                  {project.description}
-                </p>
-                <div className="flex justify-between">
+              key={index}
+              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col"
+            >
+              {/* Image Container with Overlay */}
+              <div className="relative overflow-hidden aspect-video">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-white text-primary rounded-full hover:bg-secondary transition-colors"
+                    title="View Code"
+                  >
+                    <FaGithub size={20} />
+                  </a>
                   {project.site && (
                     <a
                       href={project.site}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary font-semibold">
-                      Live Demo
+                      className="p-3 bg-white text-primary rounded-full hover:bg-secondary transition-colors"
+                      title="Live Demo"
+                    >
+                      <FaExternalLinkAlt size={18} />
                     </a>
                   )}
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary font-semibold">
-                    GitHub
-                  </a>
                 </div>
+              </div>
+
+              {/* Content Section */}
+              <div className="p-6 flex flex-col flex-grow">
+                <span className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-2">
+                  {project.category}
+                </span>
+                <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors">
+                  {project.name}
+                </h3>
+                <p className="text-gray-600 text-sm mb-6 line-clamp-3">
+                  {project.description}
+                </p>
+                
+                {/* Tech Stack (Optional but recommended in JSON) */}
+                {project.tech && (
+                  <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-50">
+                    {project.tech.map((t, idx) => (
+                      <span key={idx} className="text-[10px] font-bold bg-gray-100 text-gray-500 px-2 py-1 rounded uppercase">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           ))}
