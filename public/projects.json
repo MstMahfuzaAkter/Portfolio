@@ -6,7 +6,13 @@
     "site": "https://plantgreen-e7dd0.web.app/",
     "github": "https://github.com/MstMahfuzaAkter/GreenNest",
     "image": "https://i.postimg.cc/sxdGqH9k/p3.png",
-    "alt": "GreenNest eco-friendly plant marketplace"
+    "alt": "GreenNest eco-friendly plant marketplace",
+    "tech": ["React", "MongoDB", "Firebase", "ExpressJS", "Tailwind CSS"],
+    "challenges": [
+      "Implementing complex inventory management for various plant species.",
+      "Optimizing image loading for a smoother shopping experience.",
+      "Developing a secure user authentication system with Firebase."
+    ]
   },
   {
     "name": "Habit Tracker",
@@ -15,7 +21,13 @@
     "site": "https://habit-tracker-b0971.web.app/",
     "github": "https://github.com/MstMahfuzaAkter/habit-tracker",
     "image": "https://i.postimg.cc/P5kKYKgy/p1.png",
-    "alt": "Habit Tracker productivity application"
+    "alt": "Habit Tracker productivity application",
+    "tech": ["React", "Lucide Icons", "Tailwind CSS", "Local Storage"],
+    "challenges": [
+      "Ensuring real-time progress updates without page reloads.",
+      "Creating an intuitive UI that motivates daily user engagement.",
+      "Managing complex state for daily, weekly, and monthly tracking."
+    ]
   },
   {
     "name": "ClubSphere",
@@ -24,6 +36,12 @@
     "site": "https://clubsphere-a54db.web.app/",
     "github": "https://github.com/MstMahfuzaAkter/ClubSphere_Client",
     "image": "https://i.postimg.cc/JhzN5FPv/p2.png",
-    "alt": "ClubSphere club and event management system"
+    "alt": "ClubSphere club and event management system",
+    "tech": ["React", "Node.js", "MongoDB", "ExpressJS", "JWT"],
+    "challenges": [
+      "Building a multi-level user role system (Admin, Member, Visitor).",
+      "Syncing event schedules across different time zones for global users.",
+      "Implementing real-time notifications for event updates."
+    ]
   }
 ]
