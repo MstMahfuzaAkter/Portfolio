@@ -63,7 +63,7 @@ const Resume = () => {
                 <div className="absolute -left-[9px] top-1 w-4 h-4 bg-[#0a0f1d] border-2 border-blue-500 rounded-full group-hover/item:scale-150 transition-all duration-300 shadow-[0_0_10px_#3b82f6]"></div>
                 
                 <div className="bg-[#111a2d]/50 border border-white/5 p-8 rounded-[2rem] hover:border-blue-500/30 transition-all duration-500 backdrop-blur-sm">
-                  <span className="text-[10px] font-black text-blue-400 uppercase tracking-[3px] bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">2023 - Present</span>
+                  <span className="text-[10px] font-black text-blue-400 uppercase tracking-[3px] bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">2022 - Present</span>
                   <h4 className="text-2xl font-bold text-white mt-4">B.Sc. in Computer Science & Engineering</h4>
                   <p className="text-teal-400/90 font-bold mt-2 tracking-wide">Jagannath University (JnU)</p>
                   <p className="text-gray-400 text-sm mt-4 leading-relaxed">

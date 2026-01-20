@@ -27,7 +27,7 @@ const HeroSection = () => {
             </h1>
             
             <h2 className="text-3xl md:text-5xl font-bold text-white/90 mb-6">
-              Frontend <span className="text-teal-400">Developer</span>
+              MERN Stack <span className="text-teal-400">Developer</span>
             </h2>
 
             <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
